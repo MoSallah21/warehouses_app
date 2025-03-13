@@ -41,7 +41,7 @@ class DetailInvoicePage extends StatelessWidget {
             if (state is GetInvoiceLoadingState) {
               return const Center(child: CircularProgressIndicator());
             } else if (state is GetInvoiceFailureState) {
-              print('Error: ${state.error}');
+              debugPrint('Error: ${state.error}');
               return Center(child: Text('Error: ${state.error}'));
             } else if (state is GetInvoiceSuccessState&&state.invoiceItems.isEmpty) {
               return const Center(child: Text('No data available',style: TextStyle(fontSize: 24),));

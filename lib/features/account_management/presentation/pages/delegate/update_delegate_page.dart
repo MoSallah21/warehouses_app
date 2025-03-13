@@ -29,7 +29,7 @@ class UpdateDelegatePage extends StatelessWidget {
       listener: (BuildContext context, AccountState state) {
         if(state is AddOrUpdateAccountSuccessState){
           showToast(text: S.of(context).editSuccessfully, state: ToastState.SUCSSES);
-          navigateToWithPushWithReplace(context, AllDelegatesPage());
+          navigateToWithPushWithReplace(context, const AllDelegatesPage());
         }
         if(state is AddOrUpdateAccountErrorState){
           showToast(text: S.of(context).editFailed, state: ToastState.ERROR);

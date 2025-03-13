@@ -36,7 +36,7 @@ class UpdateDealerPage extends StatelessWidget {
         if(state is AddOrUpdateAccountSuccessState){
           showToast(text: S.of(context).editSuccessfully, state: ToastState.SUCSSES);
 
-          navigateToWithPushWithReplace(context, AllDealersPage());
+          navigateToWithPushWithReplace(context, const AllDealersPage());
         }
         if(state is AddOrUpdateAccountErrorState){
           showToast(text: S.of(context).editFailed, state: ToastState.ERROR);

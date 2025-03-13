@@ -12,12 +12,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:eks/injection_container.dart' as di;
 
 class AllProductsPage extends StatefulWidget {
-  AllProductsPage({super.key});
+  const AllProductsPage({super.key});
   @override
-  _AllProductsPageState createState() => _AllProductsPageState();
+  AllProductsPageState createState() => AllProductsPageState();
 }
 
-class _AllProductsPageState extends State<AllProductsPage> {
+class AllProductsPageState extends State<AllProductsPage> {
   final TextEditingController nameController = TextEditingController();
   List<Product> filteredProducts = [];
 
@@ -53,12 +53,12 @@ class _AllProductsPageState extends State<AllProductsPage> {
               Navigator.of(context).pop();
             }
             if (state is GetAllProductsOrUnitsLoadingState) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             } else if (state is GetAllProductsOrUnitsFailureState) {
-              print('Error: ${state.error}');
+              debugPrint('Error: ${state.error}');
               return Center(child: Text('Error: ${state.error}'));
             } else if (state is GetAllProductsOrUnitsSuccessState && state.products!.isEmpty) {
-              return Center(child: Text('No data available', style: TextStyle(fontSize: 24)));
+              return const Center(child: Text('No data available', style: TextStyle(fontSize: 24)));
             } else {
               final List<Product> products = cubit.products;
               if (filteredProducts.isEmpty) {
@@ -87,11 +87,11 @@ class _AllProductsPageState extends State<AllProductsPage> {
                         },
                       ),
                       SizedBox(height: screenHeight * 0.03),
-                      Text(S.of(context).allProducts, style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                      Text(S.of(context).allProducts, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                       SizedBox(height: screenHeight * 0.01),
                       ListView.builder(
                         shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         itemCount: filteredProducts.length,
                         itemBuilder: (context, index) {
                           final Product product = filteredProducts[index];
@@ -109,7 +109,7 @@ class _AllProductsPageState extends State<AllProductsPage> {
                                 child: Card(
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(
+                                    side: const BorderSide(
                                       color: Colors.black,
                                       width: 1.0,
                                     ),
@@ -128,9 +128,9 @@ class _AllProductsPageState extends State<AllProductsPage> {
                                           ),
                                         ),
                                       ),
-                                      SizedBox(width: 2.5),
+                                      const SizedBox(width: 2.5),
                                       myDivider(context),
-                                      SizedBox(width: 2.5),
+                                      const SizedBox(width: 2.5),
                                       Expanded(
                                         child: Padding(
                                           padding: const EdgeInsets.all(20.0),
@@ -142,9 +142,9 @@ class _AllProductsPageState extends State<AllProductsPage> {
                                           ),
                                         ),
                                       ),
-                                      SizedBox(width: 2.5),
+                                      const SizedBox(width: 2.5),
                                       myDivider(context),
-                                      SizedBox(width: 2.5),
+                                      const SizedBox(width: 2.5),
                                       Expanded(
                                         child: Padding(
                                           padding: const EdgeInsets.all(20.0),
@@ -176,7 +176,7 @@ class _AllProductsPageState extends State<AllProductsPage> {
                                       ));
                                     },
                                   ),
-                                  SizedBox(width: 160),
+                                  const SizedBox(width: 160),
                                   IconButton(
                                     icon: Icon(Icons.delete_outline_outlined, color: Colors.red, size: screenWidth * 0.07),
                                     onPressed: () {
@@ -193,7 +193,7 @@ class _AllProductsPageState extends State<AllProductsPage> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 15),
+                              const SizedBox(height: 15),
                             ],
                           );
                         },

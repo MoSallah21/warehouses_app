@@ -51,7 +51,7 @@ class _AddInvoicePageState extends State<AddInvoicePage> {
       items: invoiceItems,
       totalPrice: total,
     );
-    print(invoice.toString());
+    debugPrint(invoice.toString());
     return invoice;
   }
   void calculateTotal() {
@@ -125,10 +125,10 @@ class _AddInvoicePageState extends State<AddInvoicePage> {
       child: BlocConsumer<InvoiceCubit,InvoiceState>(
         listener: (BuildContext context, state) {
           if(state is AddOrUpdateInvoiceErrorState){
-            print(state.errors.toString());
+            debugPrint(state.errors.toString());
           }
          else if(state is AddOrUpdateInvoiceFailureState){
-            print(state.error.toString());
+            debugPrint(state.error.toString());
           }
           else if (state is AddOrUpdateInvoiceSuccessState) {
             _dateController.clear();
@@ -168,7 +168,7 @@ class _AddInvoicePageState extends State<AddInvoicePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        S.of(context).totalPrice+' :',
+                        '${S.of(context).totalPrice} :',
                         style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -176,8 +176,8 @@ class _AddInvoicePageState extends State<AddInvoicePage> {
                       ),
                       const SizedBox(width: 10),
                       Text(
-                        '${total}',
-                        style: TextStyle(
+                        '$total',
+                        style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
@@ -388,11 +388,11 @@ class _AddInvoicePageState extends State<AddInvoicePage> {
                                     SearchChoices.single(
                                       items: productName?.map((item) {
                                         return DropdownMenuItem(
+                                          value: item,
                                           child: Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 50),
                                             child: Center(child: Text(item)),
                                           ),
-                                          value: item,
                                         );
                                       }).toList(),
                                       underline: Container(
@@ -400,7 +400,7 @@ class _AddInvoicePageState extends State<AddInvoicePage> {
                                         color: const Color(0xFF707070),
                                       ),
                                       value: selectedProduct.length > index ? selectedProduct[index] : null,
-                                      hint: Center(child: Text('${S.of(context).productName}')),
+                                      hint: Center(child: Text(S.of(context).productName)),
                                       displayClearIcon: false,
                                       searchHint: S.of(context).selectOne,
                                       onChanged: (value) {

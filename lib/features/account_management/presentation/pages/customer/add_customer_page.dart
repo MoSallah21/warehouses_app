@@ -36,7 +36,7 @@ class AddCustomerPage extends StatelessWidget {
         }
         if(state is AddOrUpdateAccountErrorState){
           showToast(text: S.of(context).addFailed, state: ToastState.ERROR);
-          print(state.errors);
+          debugPrint(state.errors.toString());
         }
 
       },

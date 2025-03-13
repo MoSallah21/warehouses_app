@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:eks/core/constants/server_constants.dart';
 import 'package:eks/features/product_management/data/models/unit_model.dart';
 import 'package:eks/features/product_management/domain/entities/unit_entity.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 abstract class UnitRemoteDatasource{
@@ -31,7 +32,7 @@ class UnitRemoteDatasourceImp extends UnitRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       }
       else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
@@ -62,7 +63,7 @@ class UnitRemoteDatasourceImp extends UnitRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       }
       else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
@@ -91,7 +92,7 @@ class UnitRemoteDatasourceImp extends UnitRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       }
       else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {

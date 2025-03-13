@@ -30,11 +30,11 @@ class DetailDelegatePage extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                        '${S.of(context).name}:   ',style: TextStyle(fontSize: 24)
+                        '${S.of(context).name}:   ',style: const TextStyle(fontSize: 24)
                     ),
 
                     Text(
-                        oldUsername,style: TextStyle(fontSize: 24)
+                        oldUsername,style: const TextStyle(fontSize: 24)
                     ),
                   ],
                 ),
@@ -42,11 +42,11 @@ class DetailDelegatePage extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      '${S.of(context).password}: ',style: TextStyle(fontSize: 24),
+                      '${S.of(context).password}: ',style: const TextStyle(fontSize: 24),
                     ),
 
                     Text(
-                        oldPassword,style: TextStyle(fontSize: 24)
+                        oldPassword,style: const TextStyle(fontSize: 24)
                     ),
                   ],
                 ),

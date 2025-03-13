@@ -36,7 +36,7 @@ class AddUserPage extends StatelessWidget {
                       SizedBox(height: screenHeight * 0.05),
                       buildIconButton(context, Icons.shop, S.of(context).addCustomer, AddCustomerPage(),screenWidth,screenHeight),
                       SizedBox(height: screenHeight * 0.09),
-                      TitleWidget(),
+                      const TitleWidget(),
                     ],
                   ),
                 ),

@@ -3,6 +3,7 @@ import 'package:eks/core/constants/server_constants.dart';
 import 'package:eks/core/errors/exception.dart';
 import 'package:eks/features/invoice_management/data/models/invoice_items_model.dart';
 import 'package:eks/features/invoice_management/data/models/invoice_model.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 abstract class InvoiceRemoteDatasource{
@@ -37,7 +38,7 @@ class InvoiceRemoteDatasourceImp extends InvoiceRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       } else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
         final errors = jsonResponse['errors'] as Map<String, dynamic>;
@@ -70,7 +71,7 @@ class InvoiceRemoteDatasourceImp extends InvoiceRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       } else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
         final errors = jsonResponse['errors'] as Map<String, dynamic>;
@@ -97,7 +98,7 @@ class InvoiceRemoteDatasourceImp extends InvoiceRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       }
       else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
@@ -143,7 +144,7 @@ class InvoiceRemoteDatasourceImp extends InvoiceRemoteDatasource{
       final List<InvoiceModel> invoice = data
           .map<InvoiceModel>((jsonInvoiceModel) => InvoiceModel.fromJson(jsonInvoiceModel))
           .toList();
-      print(invoice);
+      debugPrint(invoice.toString());
       return invoice;
     } else {
       throw ServerException();

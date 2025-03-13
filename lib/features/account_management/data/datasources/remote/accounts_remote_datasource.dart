@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:eks/core/constants/server_constants.dart';
 import 'package:eks/core/errors/exception.dart';
 import 'package:eks/features/account_management/data/models/users_model.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 abstract class AccountsRemoteDatasource{
@@ -44,7 +45,7 @@ class AccountsRemoteDatasourceImp extends AccountsRemoteDatasource{
         final jsonResponse = json.decode(response.body);
 
         if (jsonResponse['state'] == 'success') {
-          print(jsonResponse['state']);
+          debugPrint(jsonResponse['state']);
           return [];
         }
 
@@ -66,7 +67,6 @@ class AccountsRemoteDatasourceImp extends AccountsRemoteDatasource{
   }
   @override
   Future<List<dynamic>> addCustomer(UsersModel user) async {
-    print('x');
 
     final body = json.encode({
       "username": user.username,
@@ -85,7 +85,7 @@ class AccountsRemoteDatasourceImp extends AccountsRemoteDatasource{
         final jsonResponse = json.decode(response.body);
 
         if (jsonResponse['state'] == 'success') {
-          print(jsonResponse['state']);
+          debugPrint(jsonResponse['state']);
           return [];
         }
         else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
@@ -117,7 +117,7 @@ class AccountsRemoteDatasourceImp extends AccountsRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       }
       else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
@@ -155,7 +155,7 @@ class AccountsRemoteDatasourceImp extends AccountsRemoteDatasource{
       if (response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
         if (jsonResponse['state'] == 'success') {
-          print(jsonResponse['state']);
+          debugPrint(jsonResponse['state']);
           return [];
         }
 
@@ -192,7 +192,7 @@ class AccountsRemoteDatasourceImp extends AccountsRemoteDatasource{
         final jsonResponse = json.decode(response.body);
 
         if (jsonResponse['state'] == 'success') {
-          print(jsonResponse['state']);
+          debugPrint(jsonResponse['state']);
           return [];
         }
         else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
@@ -227,7 +227,7 @@ class AccountsRemoteDatasourceImp extends AccountsRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       }
       else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
@@ -256,7 +256,7 @@ class AccountsRemoteDatasourceImp extends AccountsRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       }
       else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
@@ -285,7 +285,7 @@ class AccountsRemoteDatasourceImp extends AccountsRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       }
       else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
@@ -314,7 +314,7 @@ class AccountsRemoteDatasourceImp extends AccountsRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       }
       else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
@@ -342,7 +342,7 @@ class AccountsRemoteDatasourceImp extends AccountsRemoteDatasource{
       final List<UsersModel> users = data
           .map<UsersModel>((jsonUserModel) => UsersModel.fromJson(jsonUserModel))
           .toList();
-      print(users);
+      debugPrint(users.toString());
 
       return users;
     } else {

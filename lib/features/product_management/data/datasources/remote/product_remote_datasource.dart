@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:eks/core/constants/server_constants.dart';
 import 'package:eks/features/product_management/data/models/product_model.dart';
 import 'package:eks/features/product_management/domain/entities/product_entity.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 abstract class ProductRemoteDatasource{
@@ -35,7 +36,7 @@ class ProductRemoteDatasourceImp extends ProductRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       }
       else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
@@ -70,7 +71,7 @@ class ProductRemoteDatasourceImp extends ProductRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       }
       else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {
@@ -101,7 +102,7 @@ class ProductRemoteDatasourceImp extends ProductRemoteDatasource{
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       if (jsonResponse['state'] == 'success') {
-        print(jsonResponse['state']);
+        debugPrint(jsonResponse['state']);
         return [];
       }
       else if (jsonResponse['state'] == 'not success' && jsonResponse.containsKey('errors')) {

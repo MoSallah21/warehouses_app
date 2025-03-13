@@ -32,8 +32,8 @@ class DetailProductPage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text('${S.of(context).name} :   ',style: TextStyle(fontSize: 24),),
-                      Text(oldName,style: TextStyle(fontSize: 24)),
+                      Text('${S.of(context).name} :   ',style: const TextStyle(fontSize: 24),),
+                      Text(oldName,style: const TextStyle(fontSize: 24)),
 
                     ],
                   ),
@@ -42,26 +42,26 @@ class DetailProductPage extends StatelessWidget {
               SizedBox(height: screenHeight * 0.03),
               Row(
                 children: [
-                  Text('${S.of(context).code} :   ',style: TextStyle(fontSize: 24),),
-                  Text(oldCode,style: TextStyle(fontSize: 24)),
+                  Text('${S.of(context).code} :   ',style: const TextStyle(fontSize: 24),),
+                  Text(oldCode,style: const TextStyle(fontSize: 24)),
                 ],
               ),
               SizedBox(height: screenHeight * 0.03),
               Row(
                 children: [
-                  Text('${S.of(context).quantity} :   ',style: TextStyle(fontSize: 24),),
-                  Text(oldQuantity.toString(),style: TextStyle(fontSize: 24)),
-                  SizedBox(width: 10),
+                  Text('${S.of(context).quantity} :   ',style: const TextStyle(fontSize: 24),),
+                  Text(oldQuantity.toString(),style: const TextStyle(fontSize: 24)),
+                  const SizedBox(width: 10),
                   Text(
-                      '   '+oldUnit!
-                      ,style: TextStyle(fontSize: 24) ),
+                      '   ${oldUnit!}'
+                      ,style: const TextStyle(fontSize: 24) ),
                 ],
               ),
               SizedBox(height: screenHeight * 0.03),
               Row(
                 children: [
-                  Text('${S.of(context).price} :   ',style: TextStyle(fontSize: 24)),
-                  Text(oldPrice.toString(),style: TextStyle(fontSize: 24)),
+                  Text('${S.of(context).price} :   ',style: const TextStyle(fontSize: 24)),
+                  Text(oldPrice.toString(),style: const TextStyle(fontSize: 24)),
                 ],
               ),
             ],

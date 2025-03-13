@@ -44,7 +44,7 @@ class UpdateUnitPage extends StatelessWidget {
           listener: (BuildContext context, ProductState state) {
             if(state is AddOrUpdateProductOrUnitSuccessState){
               showToast(text: S.of(context).editSuccessfully, state: ToastState.SUCSSES);
-              navigateToWithPushWithReplace(context, AllUnitsPage());
+              navigateToWithPushWithReplace(context, const AllUnitsPage());
             }
             if(state is AddOrUpdateProductOrUnitErrorState){
               showToast(text: S.of(context).editFailed, state: ToastState.ERROR);

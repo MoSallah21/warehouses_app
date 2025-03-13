@@ -40,12 +40,12 @@ class _AllInvoicesPageState extends State<AllInvoicesPage> {
           builder: (context, state) {
             InvoiceCubit cubit=InvoiceCubit.get(context);
             if (state is GetAllInvoicesLoadingState) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             } else if (state is GetAllInvoicesFailureState) {
-              print('Error: ${state.error}');
+              debugPrint('Error: ${state.error}');
               return Center(child: Text('Error: ${state.error}'));
             } else if (state is GetAllInvoicesSuccessState&&state.invoices.isEmpty) {
-              return Center(child: Text('No data available',style: TextStyle(fontSize: 24),));
+              return const Center(child: Text('No data available',style: TextStyle(fontSize: 24),));
             } else {
               final List<Invoice> invoices = cubit.invoices;
               if (filteredInvoice.isEmpty) {
@@ -72,11 +72,11 @@ class _AllInvoicesPageState extends State<AllInvoicesPage> {
                         },
                       ),
                       SizedBox(height: screenHeight * 0.01),
-                      Text(S.of(context).allInvoices, style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                      Text(S.of(context).allInvoices, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                       SizedBox(height: screenHeight * 0.01),
                       ListView.builder(
                         shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         itemCount: filteredInvoice.length,
                         itemBuilder: (context, index) {
                           final Invoice invoice = filteredInvoice[index];
@@ -94,7 +94,7 @@ class _AllInvoicesPageState extends State<AllInvoicesPage> {
                                 child: Card(
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(
+                                    side: const BorderSide(
                                       color: Colors.black,
                                       width: 1.0,
                                     ),
@@ -106,7 +106,7 @@ class _AllInvoicesPageState extends State<AllInvoicesPage> {
                                       children: [
                                         Column(
                                           children: [
-                                            Text('${S.of(context).name} :    '+invoice.clientName,
+                                            Text('${S.of(context).name} :    ${invoice.clientName}',
                                                 style: TextStyle(fontSize: screenWidth * 0.033,
                                                 )),
                                           ],
@@ -117,14 +117,14 @@ class _AllInvoicesPageState extends State<AllInvoicesPage> {
                                               padding: const EdgeInsets.all(20.0),
                                               child: Column(
                                                 children: [
-                                                  Text('${S.of(context).invoiceNumber}:   '+invoice.number,
+                                                  Text('${S.of(context).invoiceNumber}:   ${invoice.number}',
                                                     style: TextStyle(fontSize: screenWidth * 0.033,
                                                     ),
                                                   ),
                                                 ],
                                               ),
                                             ),
-                                            SizedBox(width: 5),
+                                            const SizedBox(width: 5),
                                             Padding(
                                               padding: const EdgeInsets.all(20.0),
                                               child: Column(
@@ -132,7 +132,7 @@ class _AllInvoicesPageState extends State<AllInvoicesPage> {
                                                 crossAxisAlignment: CrossAxisAlignment.center,
                                                 children: [
 
-                                                  Text('${S.of(context).totalPrice}',
+                                                  Text(S.of(context).totalPrice,
                                                     style: TextStyle(fontSize: screenWidth * 0.033,
                                                     ),
                                                   ),
@@ -151,7 +151,7 @@ class _AllInvoicesPageState extends State<AllInvoicesPage> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 15),
+                              const SizedBox(height: 15),
                             ],
                           );
                         },

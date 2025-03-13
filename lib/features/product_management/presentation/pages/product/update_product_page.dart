@@ -52,7 +52,7 @@ class UpdateProductPage extends StatelessWidget {
           listener: (BuildContext context, ProductState state) {
             if(state is AddOrUpdateProductOrUnitSuccessState){
               showToast(text: S.of(context).editSuccessfully, state: ToastState.SUCSSES);
-              navigateToWithPushWithReplace(context, AllProductsPage());
+              navigateToWithPushWithReplace(context, const AllProductsPage());
             }
             if(state is AddOrUpdateProductOrUnitErrorState){
               showToast(text: S.of(context).editFailed, state: ToastState.ERROR);
@@ -102,12 +102,12 @@ class UpdateProductPage extends StatelessWidget {
                               flex: 3,
                               child: FormWidget(
                                 initialText: oldQuantity.toString(),
-                                inputType: TextInputType.numberWithOptions(decimal: true),
+                                inputType: const TextInputType.numberWithOptions(decimal: true),
                                 label: S.of(context).quantity,
                                 controller: quantityController,
                               ),
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             if(selectedUnit!=S.of(context).addUnit)
                               Expanded(
                                 flex: 2,
@@ -117,7 +117,7 @@ class UpdateProductPage extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     label: Text(S.of(context).unit),
-                                    labelStyle: TextStyle(color: Colors.black),
+                                    labelStyle: const TextStyle(color: Colors.black),
                                   ),
                                   value:oldUnit,
                                   items: types.map((String type) {

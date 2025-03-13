@@ -29,12 +29,12 @@ class AddDelegatePage extends StatelessWidget {
         }
         if(state is AddOrUpdateAccountErrorState){
           showToast(text: S.of(context).addFailed, state: ToastState.ERROR);
-          print(state.errors);
+          debugPrint(state.errors.toString());
 
         }
         if(state is AddOrUpdateAccountFailureState){
           showToast(text: S.of(context).editFailed, state: ToastState.ERROR);
-          print(state.error);
+          debugPrint(state.error);
         }
 
       },

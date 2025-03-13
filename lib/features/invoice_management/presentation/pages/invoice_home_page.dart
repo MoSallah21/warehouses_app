@@ -28,11 +28,11 @@ class InvoiceHomePage extends StatelessWidget {
                 Flexible(
                   child: Column(
                     children: [
-                      buildIconButton(context, Icons.trolley , S.of(context).buy, AllInvoicesPage(invoiceType: 'buy',),screenWidth,screenHeight),
+                      buildIconButton(context, Icons.trolley , S.of(context).buy, const AllInvoicesPage(invoiceType: 'buy',),screenWidth,screenHeight),
                       SizedBox(height: screenHeight * 0.15),
-                      buildIconButton(context, Icons.sell_outlined, S.of(context).sell, AllInvoicesPage(invoiceType: 'sell',),screenWidth,screenHeight),
+                      buildIconButton(context, Icons.sell_outlined, S.of(context).sell, const AllInvoicesPage(invoiceType: 'sell',),screenWidth,screenHeight),
                       SizedBox(height: screenHeight * 0.1),
-                      TitleWidget(),
+                      const TitleWidget(),
                     ],
                   ),
                 ),

@@ -27,7 +27,7 @@ class AddUnitPagePage extends StatelessWidget {
           showToast(text: S.of(context).addFailed, state: ToastState.ERROR);
         } else if (state is AddOrUpdateProductOrUnitFailureState) {
           showToast(text: S.of(context).addFailed, state: ToastState.ERROR);
-          print(state.error);
+          debugPrint(state.error);
         }
       },
       builder: (BuildContext context, ProductState state) {

@@ -62,7 +62,7 @@ class _AllCustomersPageState extends State<AllCustomersPage> {
             if (state is GetAllUsersLoadingState) {
               return const Center(child: CircularProgressIndicator());
             } else if (state is GetAllUsersFailureState) {
-              print('Error: ${state.error}');
+              debugPrint('Error: ${state.error}');
               return Center(child: Text('Error: ${state.error}'));
             }
             else if(state is GetAllUsersSuccessState&&state.users.isEmpty) {

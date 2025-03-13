@@ -31,57 +31,57 @@ class DetailDealerPage extends StatelessWidget {
                 SizedBox(height: screenHeight * 0.04),
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       'الاسم:   ',style: TextStyle(fontSize: 24)
                     ),
 
                     Text(
-                      oldUsername,style: TextStyle(fontSize: 24)
+                      oldUsername,style: const TextStyle(fontSize: 24)
                     ),
                   ],
                 ),
                 SizedBox(height: screenHeight * 0.03),
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       'العنوان: ',style: TextStyle(fontSize: 24),
                     ),
 
                     Text(
-                     oldAddress,style: TextStyle(fontSize: 24)
+                     oldAddress,style: const TextStyle(fontSize: 24)
                     ),
                   ],
                 ),
                 SizedBox(height: screenHeight * 0.03),
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       'رقم الموبايل:  ',style: TextStyle(fontSize: 24),
                     ),
                     Text(
-                      oldPhone,style: TextStyle(fontSize: 24),
+                      oldPhone,style: const TextStyle(fontSize: 24),
                     ),
                   ],
                 ),
                 SizedBox(height: screenHeight * 0.03),
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       'اسم المسؤول:   ',style: TextStyle(fontSize: 24),
                     ),
                     Text(
-                      oldAdministratorName,style: TextStyle(fontSize: 24),
+                      oldAdministratorName,style: const TextStyle(fontSize: 24),
                     ),
                   ],
                 ),
                 SizedBox(height: screenHeight * 0.03),
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       'رقم موبايل المسؤول:  ',style: TextStyle(fontSize: 24),
                     ),
                     Text(
-                      oldAdministratorPhone,style: TextStyle(fontSize: 24),
+                      oldAdministratorPhone,style: const TextStyle(fontSize: 24),
                     ),
                   ],
                 ),

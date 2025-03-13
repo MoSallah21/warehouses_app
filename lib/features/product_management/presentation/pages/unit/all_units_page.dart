@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:eks/injection_container.dart' as di;
 
 class AllUnitsPage extends StatefulWidget {
-  AllUnitsPage({super.key});
+  const AllUnitsPage({super.key});
 
   @override
   State<AllUnitsPage> createState() => _AllUnitsPageState();
@@ -45,18 +45,18 @@ class _AllUnitsPageState extends State<AllUnitsPage> {
             }
           else  if(state is DeleteProductOrUnitErrorState){
               showToast(text: S.of(context).deleteFailed, state: ToastState.ERROR);
-              print(state.errors.toString());
+              debugPrint(state.errors.toString());
               Navigator.of(context).pop();
             }
            else if(state is DeleteProductOrUnitFailureState){
               showToast(text: S.of(context).deleteFailed, state: ToastState.ERROR);
-              print(state.error.toString());
+              debugPrint(state.error.toString());
               Navigator.of(context).pop();
             }
             if (state is GetAllProductsOrUnitsLoadingState) {
               return const Center(child: CircularProgressIndicator());
             } else if (state is GetAllProductsOrUnitsFailureState) {
-              print('Error: ${state.error}');
+              debugPrint('Error: ${state.error}');
               return Center(child: Text('Error: ${state.error}'));
             } else if (state is GetAllProductsOrUnitsSuccessState&&state.units!.isEmpty) {
               return const Center(child: Text('No data available',style: TextStyle(fontSize: 24),));

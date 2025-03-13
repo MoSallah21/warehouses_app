@@ -37,11 +37,11 @@ class UpdateCustomerPage extends StatelessWidget {
         if(state is AddOrUpdateAccountSuccessState){
           showToast(text: S.of(context).editSuccessfully, state: ToastState.SUCSSES);
 
-          navigateToWithPushWithReplace(context, AllCustomersPage());
+          navigateToWithPushWithReplace(context, const AllCustomersPage());
         }
         if(state is AddOrUpdateAccountErrorState){
           showToast(text: S.of(context).editFailed, state: ToastState.ERROR);
-          print(state.errors);
+          debugPrint(state.errors.toString());
         }
 
       },

@@ -36,7 +36,7 @@ class AddDealerPage extends StatelessWidget {
         }
         if(state is AddOrUpdateAccountErrorState){
           showToast(text: S.of(context).addFailed, state: ToastState.ERROR);
-          print(state.errors);
+          debugPrint(state.errors.toString());
         }
 
       },
@@ -109,7 +109,7 @@ class AddDealerPage extends StatelessWidget {
                 ),
               ),
             ),
-          ):Center(child: CircularProgressIndicator(),),
+          ):const Center(child: CircularProgressIndicator(),),
         );
       },
     );

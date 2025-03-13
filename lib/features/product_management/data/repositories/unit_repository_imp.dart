@@ -61,7 +61,6 @@ import 'package:eks/features/product_management/domain/repositories/unit_reposit
          return Future.error('Failed to get all units: $error');
        }
      } else {
-       return Future.error('No internet connection');
      }
    }
 

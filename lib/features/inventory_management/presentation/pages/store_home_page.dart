@@ -37,10 +37,10 @@ class StoreHomePage extends StatelessWidget {
                       mainAxisSpacing: screenHeight * 0.02,
                       children: [
                         buildIconButton(context, Icons.production_quantity_limits, S.of(context).allProducts, AllProductsPage(), screenWidth, screenHeight),
-                        buildIconButton(context, Icons.handshake, S.of(context).allDelegates, AllDelegatesPage(), screenWidth, screenHeight),
-                        buildIconButton(context, Icons.person, S.of(context).allDealers, AllDealersPage(), screenWidth, screenHeight),
-                        buildIconButton(context, Icons.shop_outlined, S.of(context).allCustomers, AllCustomersPage(), screenWidth, screenHeight),
-                        buildIconButton(context, Icons.ac_unit, S.of(context).allUnits, AllUnitsPage(), screenWidth, screenHeight),
+                        buildIconButton(context, Icons.handshake, S.of(context).allDelegates, const AllDelegatesPage(), screenWidth, screenHeight),
+                        buildIconButton(context, Icons.person, S.of(context).allDealers, const AllDealersPage(), screenWidth, screenHeight),
+                        buildIconButton(context, Icons.shop_outlined, S.of(context).allCustomers, const AllCustomersPage(), screenWidth, screenHeight),
+                        buildIconButton(context, Icons.ac_unit, S.of(context).allUnits, const AllUnitsPage(), screenWidth, screenHeight),
 
                       ],
                     );

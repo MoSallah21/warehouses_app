@@ -50,10 +50,10 @@ class AddProductPage extends StatelessWidget {
               showToast(text: S.of(context).addSuccessfully, state: ToastState.SUCSSES);
             } else if (state is AddOrUpdateProductOrUnitErrorState) {
               showToast(text: S.of(context).addFailed, state: ToastState.ERROR);
-              print(state.errors);
+              debugPrint(state.errors.toString());
             } else if (state is AddOrUpdateProductOrUnitFailureState) {
               showToast(text: S.of(context).addFailed, state: ToastState.ERROR);
-              print(state.error);
+              debugPrint(state.error);
             }
           },
           builder: (BuildContext context, ProductState state) {
@@ -98,12 +98,12 @@ class AddProductPage extends StatelessWidget {
                             Expanded(
                               flex: 3,
                               child: FormWidget(
-                                inputType: TextInputType.numberWithOptions(decimal: true),
+                                inputType: const TextInputType.numberWithOptions(decimal: true),
                                 label: S.of(context).quantity,
                                 controller: quantityController,
                               ),
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             if(selectedUnit!=S.of(context).addUnit)
                               Expanded(
                               flex: 2,
@@ -113,7 +113,7 @@ class AddProductPage extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   label: Text(S.of(context).unit),
-                                  labelStyle: TextStyle(color: Colors.black),
+                                  labelStyle: const TextStyle(color: Colors.black),
                                 ),
                                 value: selectedUnit,
                                 items: types.map((String type) {
@@ -145,7 +145,7 @@ class AddProductPage extends StatelessWidget {
 
                         SizedBox(height: screenHeight * 0.03),
                         FormWidget(
-                          inputType: TextInputType.numberWithOptions(decimal: true),
+                          inputType: const TextInputType.numberWithOptions(decimal: true),
                           label: S.of(context).price,
                           controller: priceController,
                         ),
