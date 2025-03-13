@@ -1,0 +1,38 @@
+name: eks
+description: "A Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  get_it: ^7.7.0
+  dartz: ^0.10.1
+  flutter_bloc: ^8.1.6
+  internet_connection_checker: ^2.0.0
+  shared_preferences: ^2.3.2
+  equatable: ^2.0.5
+  http: ^1.2.2
+  intl: ^0.19.0
+  flutter_localization: ^0.2.2
+  fluttertoast: ^8.2.8
+  search_choices: ^2.2.10
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/
+    - assets/icons/
+
+flutter_intl:
+  enabled: true
